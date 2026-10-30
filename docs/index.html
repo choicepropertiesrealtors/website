@@ -332,6 +332,22 @@
       .why-invest li svg { width: 15px; height: 15px; flex: none; color: var(--brand); margin-top: 4px; }
       .land-actions { margin-top: auto; padding-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
 
+      /* ---------- share / deep links ---------- */
+      .luxury-card, .land-card { scroll-margin-top: 96px; }
+      .listing-highlight { box-shadow: 0 0 0 3px var(--brand), 0 18px 44px -12px rgba(217, 35, 46, 0.45); }
+      .share-toast {
+        position: fixed; left: 50%; bottom: 24px; z-index: 90;
+        transform: translate(-50%, 16px);
+        background: var(--charcoal); color: #fff;
+        font-size: 0.92rem; font-weight: 600; text-align: center;
+        padding: 12px 20px; border-radius: 999px; box-shadow: var(--shadow);
+        max-width: min(92vw, 520px);
+        opacity: 0; pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .share-toast.show { opacity: 1; transform: translate(-50%, 0); }
+      @media (prefers-reduced-motion: reduce) { .share-toast { transition: none; } }
+
       /* ---------- services ---------- */
       .services-band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
       .service-rows { border-top: 1px solid var(--line); }
@@ -683,7 +699,7 @@
             <h2>Luxury <span class="accent">homes</span></h2>
             <p>Premium properties, hand-picked for buyers who want more. Tap any photo to look inside.</p>
           </div>
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-okun-ajah">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -742,12 +758,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="3-Bedroom Semi-Detached Duplex" data-share-price="₦110,000,000" data-share-location="Okun Ajah, Lekki — Lagos" aria-label="Share this listing: 3-Bedroom Semi-Detached Duplex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-ikate-penthouse">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -812,12 +830,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="3-Bedroom Penthouse + Rooftop Terrace" data-share-price="₦350,000,000 asking price" data-share-location="Ikate, Lekki — Lagos" aria-label="Share this listing: 3-Bedroom Penthouse + Rooftop Terrace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-key-haven-homes-kajola">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -898,12 +918,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Key Haven Estate — 2 &amp; 3-Bedroom Homes + BQ" data-share-price="2-Bed + BQ ₦59,000,000 · 3-Bed + BQ ₦69,000,000" data-share-location="Kajola, Sagamu — Ogun State" aria-label="Share this listing: Key Haven Estate — 2 &amp; 3-Bedroom Homes + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-afe-residence">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -991,12 +1013,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="AFE Residence — 4-Bedroom Triplex + BQ" data-share-price="₦170,000,000" data-share-location="Ogombo, Lekki Scheme II, Ajah — Lagos" aria-label="Share this listing: AFE Residence — 4-Bedroom Triplex + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-queens-home">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1080,12 +1104,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Queen's Home" data-share-price="2-Bedroom Bungalow ₦47,000,000 · 3-Bedroom Bungalow ₦60,000,000" data-share-location="Mowe/Ofada, off the Lagos/Ibadan Expressway — Ogun State" aria-label="Share this listing: Queen's Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-value-centric-ikota">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1157,12 +1183,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Value Centric — 5-Bedroom Fully Detached Duplex + BQ" data-share-price="₦650,000,000 asking price" data-share-location="Ikota, Lekki — Lagos" aria-label="Share this listing: Value Centric — 5-Bedroom Fully Detached Duplex + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-chevron-duplex">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1230,12 +1258,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Superb Contemporary 5-Bedroom Detached Duplex + BQ" data-share-price="₦650,000,000 asking price" data-share-location="Chevron, Lekki — Lagos" aria-label="Share this listing: Superb Contemporary 5-Bedroom Detached Duplex + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-orchid-5bed-duplex">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1304,12 +1334,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Stunning Brand New 5-Bedroom Fully Detached Duplex + BQ" data-share-price="₦470,000,000" data-share-location="Orchid, Lekki — Lagos" aria-label="Share this listing: Stunning Brand New 5-Bedroom Fully Detached Duplex + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-celebration-parkland">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1379,12 +1411,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Celebration Parkland Estate &amp; Resort — 3-Bedroom Bungalow + BQ" data-share-price="₦85,000,000" data-share-location="Idera Scheme, Ibeju Lekki — Lagos" aria-label="Share this listing: Celebration Parkland Estate &amp; Resort — 3-Bedroom Bungalow + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-camberwall-annex">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1436,12 +1470,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Camberwall Advantage 5 Annex" data-share-price="2-Bed + BQ ₦270,000,000 · 3-Bed + BQ ₦350,000,000" data-share-location="Off Freedom Way, Lekki Phase 1 — Lagos" aria-label="Share this listing: Camberwall Advantage 5 Annex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-mowe-golf-town">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1527,12 +1563,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="Mowe Golf Town" data-share-price="2-Bed ₦68,000,000 (outright promo ₦65,000,000) · 3-Bed ₦75,000,000 / ₦80,500,000 · 4-Bed price on request" data-share-location="Mowe, Ogun State" aria-label="Share this listing: Mowe Golf Town"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="luxury-card">
+          <article class="luxury-card" id="listing-orchid-4bed-semi">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1596,6 +1634,8 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-outline-w" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-outline-w share-btn" data-share-title="4-Bedroom Semi-Detached Duplex + BQ" data-share-price="₦260,000,000" data-share-location="Orchid, Lekki — Lagos" aria-label="Share this listing: 4-Bedroom Semi-Detached Duplex + BQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
@@ -1672,7 +1712,7 @@
             <h2>Land for <span class="accent">sale</span></h2>
             <p>Serviced plots in growing estates — buy now, build when you're ready, with the documents checked before you commit.</p>
           </div>
-          <article class="land-card">
+          <article class="land-card" id="listing-maven-phase-2">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1749,12 +1789,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Maven Estate Phase 2" data-share-price="300 SQM ₦1,950,000 · 500 SQM ₦3,250,000 (total package)" data-share-location="Dagbayan via Talashe, Igbonla, Epe — Lagos" aria-label="Share this listing: Maven Estate Phase 2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-maven-phase-3">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1840,12 +1882,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Maven Estate Phase 3" data-share-price="300 SQM ₦1,500,000 · 500 SQM ₦2,500,000 (total package)" data-share-location="Solaru Village, Okenla via Tomoba, Epe — Ogun State" aria-label="Share this listing: Maven Estate Phase 3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-key-haven-imota">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -1937,12 +1981,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Key Haven Estate" data-share-price="300 SQM ₦1,740,000 · 500 SQM ₦2,900,000 (total package)" data-share-location="Imota, Ikorodu — Ogun State" aria-label="Share this listing: Key Haven Estate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-key-haven-kajola-land">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -2027,12 +2073,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Key Haven Estate — Kajola" data-share-price="300 SQM ₦2,700,000 · 500 SQM ₦4,500,000 (total package)" data-share-location="Kajola, Sagamu Interchange Axis — Ogun State" aria-label="Share this listing: Key Haven Estate — Kajola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-key-haven-phase-1-ilara">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -2109,12 +2157,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Key Haven Phase 1" data-share-price="300 SQM ₦9,000,000 · 500 SQM ₦15,000,000 (total package)" data-share-location="Ilara, Epe Axis, Epe — Lagos State" aria-label="Share this listing: Key Haven Phase 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-mowe-prime">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -2189,12 +2239,14 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Mowe Prime Estate" data-share-price="300 SQM ₦8,000,000 · 500 SQM ₦15,000,000 (total package)" data-share-location="Mowe-Ofada Axis, Ogun State" aria-label="Share this listing: Mowe Prime Estate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="land-card">
+          <article class="land-card" id="listing-creek-view-extension">
             <div class="luxury-grid">
               <div class="gallery">
                 <div class="gallery-main">
@@ -2276,6 +2328,8 @@
                     Enquire on WhatsApp
                   </a>
                   <a class="btn btn-ghost" href="#contact">Send an Enquiry</a>
+                
+                  <button type="button" class="btn btn-ghost share-btn" data-share-title="Creek View Extension (Mowe Golf Town)" data-share-price="500 SQM ₦18,500,000 · 300 SQM ₦12,500,000" data-share-location="Off Lagos-Ibadan Expressway, Mowe" aria-label="Share this listing: Creek View Extension (Mowe Golf Town)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg> Share</button>
                 </div>
               </div>
             </div>
@@ -2526,6 +2580,7 @@
     </div>
 
     <!-- floating WhatsApp -->
+    <div class="share-toast" id="shareToast" role="status" aria-live="polite"></div>
     <a class="wa-float" href="https://wa.me/2348058975356?text=Hello%20Choice%20Properties%20Realtors%2C%20I%27m%20interested%20in%20a%20property." target="_blank" rel="noopener" aria-label="Chat with Choice Properties Realtors on WhatsApp">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23m4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg>
     </a>
@@ -2591,6 +2646,78 @@
             });
           });
         });
+
+        // Share a listing: native share sheet where available, otherwise
+        // copy the listing's link. Links point at the public website with a
+        // per-listing anchor, so a shared link opens that exact listing.
+        var SHARE_BASE = 'https://choicepropertiesrealtors.github.io/website/';
+        var shareToast = document.getElementById('shareToast');
+        var shareToastTimer = null;
+        function showShareToast(msg) {
+          if (!shareToast) return;
+          shareToast.textContent = msg;
+          shareToast.classList.add('show');
+          if (shareToastTimer) clearTimeout(shareToastTimer);
+          shareToastTimer = setTimeout(function () { shareToast.classList.remove('show'); }, 3400);
+        }
+        function copyShareText(text, url) {
+          var payload = text + ' ' + url;
+          function done() { showShareToast('Link copied \u2014 paste it anywhere to share this listing.'); }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = payload;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+            document.body.removeChild(ta);
+            if (ok) done();
+            else showShareToast('Copy this link to share: ' + url);
+          }
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(payload).then(done, fallback);
+          } else {
+            fallback();
+          }
+        }
+        Array.prototype.slice.call(document.querySelectorAll('.share-btn')).forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var card = btn.closest('article');
+            var anchor = card ? card.id : '';
+            var url = SHARE_BASE + (anchor ? '#' + anchor : '');
+            var title = btn.getAttribute('data-share-title') || 'Choice Properties listing';
+            var price = btn.getAttribute('data-share-price') || '';
+            var loc = btn.getAttribute('data-share-location') || '';
+            var text = title + (price ? ' \u2014 ' + price : '') + (loc ? ' \u00b7 ' + loc : '') + ' \u2014 via Choice Properties Realtors';
+            if (navigator.share) {
+              navigator.share({ title: title + ' | Choice Properties Realtors', text: text, url: url }).catch(function (err) {
+                if (err && err.name === 'AbortError') return;
+                copyShareText(text, url);
+              });
+            } else {
+              copyShareText(text, url);
+            }
+          });
+        });
+
+        // Deep link: opening the page with a listing anchor (e.g. from a
+        // shared link) scrolls straight to that listing and highlights it.
+        function focusListingFromHash() {
+          var m = /^#(listing-[\w-]+)$/.exec(location.hash || '');
+          if (!m) return;
+          var el = document.getElementById(m[1]);
+          if (!el) return;
+          setTimeout(function () {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            el.classList.add('listing-highlight');
+            setTimeout(function () { el.classList.remove('listing-highlight'); }, 3200);
+          }, 80);
+        }
+        window.addEventListener('hashchange', focusListingFromHash);
+        focusListingFromHash();
 
         // Listing filtering (chips + hero search share one filter pass)
         var cards = Array.prototype.slice.call(document.querySelectorAll('#cards .card'));
