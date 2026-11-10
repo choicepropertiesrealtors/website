@@ -3409,5 +3409,87 @@
         });
       })();
     </script>
-  </body>
+  <!-- Choice Properties chatbot - offline rule-based assistant, no server needed -->
+<style>
+.choice-chat-btn{position:fixed;left:18px;bottom:18px;z-index:61;display:flex;align-items:center;gap:8px;background:#c8102e;color:#fff;border:0;border-radius:999px;padding:13px 18px;font:600 15px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;cursor:pointer;box-shadow:0 10px 26px -8px rgba(200,16,46,.65)}
+.choice-chat-btn:hover{background:#a50d26}
+.choice-chat-panel{position:fixed;left:18px;bottom:86px;z-index:62;width:min(370px,calc(100vw - 36px));max-height:min(560px,calc(100vh - 120px));display:none;flex-direction:column;background:#fff;color:#1a1a1a;border:1px solid #e5e5e5;border-radius:16px;overflow:hidden;box-shadow:0 18px 50px -12px rgba(0,0,0,.35);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.choice-chat-panel.open{display:flex}
+.choice-chat-head{background:#c8102e;color:#fff;padding:14px 16px;display:flex;align-items:flex-start;gap:10px}
+.choice-chat-head b{font-size:16px;display:block}
+.choice-chat-head span{font-size:12.5px;opacity:.92;display:block;margin-top:3px}
+.choice-chat-close{margin-left:auto;background:transparent;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 2px}
+.choice-chat-body{padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#f7f5f3;flex:1}
+.choice-msg{max-width:88%;padding:10px 12px;border-radius:14px;font-size:14.5px;line-height:1.5;white-space:pre-line}
+.choice-msg.bot{background:#fff;border:1px solid #e8e2de;border-bottom-left-radius:4px;align-self:flex-start}
+.choice-msg.user{background:#c8102e;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.choice-msg a{color:#0b4da2}
+.choice-msg.user a{color:#fff}
+.choice-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 14px 10px;background:#f7f5f3}
+.choice-chips button{border:1px solid #c8102e;color:#c8102e;background:#fff;border-radius:999px;padding:7px 11px;font-size:13px;cursor:pointer}
+.choice-chips button:hover{background:#c8102e;color:#fff}
+.choice-chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid #eee;background:#fff}
+.choice-chat-input input{flex:1;border:1px solid #ddd;border-radius:999px;padding:10px 13px;font-size:14.5px;outline:none}
+.choice-chat-input input:focus{border-color:#c8102e}
+.choice-chat-input button{background:#c8102e;color:#fff;border:0;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+@media (max-width:480px){.choice-chat-btn{left:12px;bottom:12px}.choice-chat-panel{left:12px;bottom:78px}}
+</style>
+<button class="choice-chat-btn" id="choiceChatBtn" type="button" aria-label="Chat with Choice Properties assistant">💬 Ask Choice</button>
+<div class="choice-chat-panel" id="choiceChatPanel" role="dialog" aria-label="Choice Properties assistant">
+  <div class="choice-chat-head"><div><b>Choice Assistant 🏡</b><span>Replies instantly, day or night — even when our team is offline. Your Exact Choice!</span></div><button class="choice-chat-close" id="choiceChatClose" type="button" aria-label="Close chat">×</button></div>
+  <div class="choice-chat-body" id="choiceChatBody"></div>
+  <div class="choice-chips" id="choiceChatChips"></div>
+  <div class="choice-chat-input"><input id="choiceChatInput" type="text" placeholder="Ask about land, houses, prices..." autocomplete="off"><button id="choiceChatSend" type="button">Send</button></div>
+</div>
+<script>
+(function(){
+var WA='https://wa.me/2348058975356?text=';
+var SITE='http://choicepropertiesrealtors.github.io/website/';
+var LAND='LAND FOR SALE\n• Maven Estate Phase 3, Epe — 300 SQM ₦1.5m / 500 SQM ₦2.5m — Buy 5 Plots, Get 1 FREE\n• Key Haven, Imota, Ikorodu — ₦2.9m per plot — Buy 5, Get 1 FREE\n• Key Haven, Kajola, Sagamu — ₦4.5m per plot — Buy 5, Get 1 FREE\n• Creek View Extension, Mowe — 300 SQM ₦12.5m / 500 SQM ₦18.5m — C of O\n• Urban Signature Plots, Eleko — 300 SQM ₦40m / 500 SQM ₦65m — C of O\n\nWhich location interests you? Tell me your budget and I will point you to the best fit.';
+var HOUSES='LUXURY HOMES\n• Urban Signature 3BR Bungalow + BQ, Eleko — ₦110m — C of O, mortgage available\n• Value Centric 5BR Detached Duplex + BQ, Ikota, Lekki — ₦650m asking\n• 5BR Detached Duplex + BQ, Orchid, Lekki — ₦470m\n• AFE Residence 4BR Triplex + BQ, Lekki Scheme II, Ajah — ₦170m\n• 3BR Semi-Detached Duplex, Okun Ajah, Lekki — ₦110m\n• 3BR Penthouse + Rooftop Terrace, Ikate, Lekki — ₦350m asking\n• Mowe Golf Town 2-Bed Semi — ₦68m (Promo ₦65m) / 3-Bed Semi ₦75m\n\nWant photos and full details for one? Tell me its name.';
+var PAYMENT='PAYMENT PLANS\nMost of our properties offer flexible payment — outright payment, deposit + instalments, and up to 12 months on selected homes.\n\nExamples:\n• Urban Signature Bungalow, Eleko — deposit ₦10m, mortgage available: 10% equity, 10-year plan at 9.75% p.a.\n• AFE Residence, Lekki — deposit ₦20m, up to 12 months payment\n• Celebration Parkland Bungalow, Ibeju Lekki — deposit ₦5m\n\nTell me the property you like and I will give you its exact plan.';
+var INSPECT='BOOK AN INSPECTION\nTo book an inspection, please send us on WhatsApp:\n1. Your full name\n2. The property you want to inspect\n3. Your preferred date and time\n\nWe will confirm your slot. Tap below to send it on WhatsApp.';
+var CONTACT='TALK TO A HUMAN\nCall / WhatsApp: +234 805 897 5356 or +234 806 227 3394\nEmail: choicepropertiesrealtors@gmail.com\nWebsite: '+SITE+'\n\nOur team replies as soon as we are back. For the fastest reply, tap WhatsApp below.';
+function waLink(text){return WA+encodeURIComponent(text);}
+function answer(q){
+  var t=' '+q.toLowerCase()+' ';
+  if(/land|plot|plots|epe|ikorodu|sagamu|mowe|creek view|maven/.test(t)){
+    if(/epe/.test(t)) return 'LAND IN EPE\n• Maven Estate Phase 3, Epe — 300 SQM ₦1.5m / 500 SQM ₦2.5m — Buy 5 Plots, Get 1 FREE\n• Key Haven Phase 1, Ilara, Epe — Government Allocation (price on request, ask us on WhatsApp)\n\nEpe is one of the fastest-growing areas for land investors. Want photos for Maven Phase 3?';
+    if(/mowe/.test(t)) return 'LAND IN MOWE\n• Creek View Extension, Mowe — 300 SQM ₦12.5m / 500 SQM ₦18.5m — C of O, deposit ₦3m\n• Mowe Prime, Mowe-Ofada — price on request\n\nPlus Mowe Golf Town homes from ₦65m. Want details for Creek View Extension?';
+    return LAND;
+  }
+  if(/house|home|duplex|bungalow|penthouse|triplex|lekki|eleko|ikota|orchid|ajah|golf/.test(t)){
+    if(/eleko/.test(t)) return 'URBAN SIGNATURE, ELEKO\n• 3BR Detached Bungalow + BQ — ₦110m — deposit ₦10m, C of O\n• Mortgage available: 10% equity, 10-year plan at 9.75% p.a.\n• Site & Service Plots — 300 SQM ₦40m / 500 SQM ₦65m\n\nThis is our featured offer this week. Want to book an inspection?';
+    if(/lekki/.test(t)) return 'HOMES IN LEKKI\n• Value Centric 5BR, Ikota — ₦650m asking\n• 5BR, Orchid — ₦470m\n• AFE 4BR Triplex, Lekki Scheme II, Ajah — ₦170m\n• 3BR Semi-Detached, Okun Ajah — ₦110m\n• 3BR Penthouse, Ikate — ₦350m asking\n\nWhich one would you like photos for?';
+    return HOUSES;
+  }
+  if(/price|cost|how much|cheap|budget|afford/.test(t)) return 'PRICES AT A GLANCE\nLand from ₦1.5m (Maven Phase 3, Epe, 300 SQM) to ₦65m (Urban Signature Plots, Eleko, 500 SQM).\nHomes from ₦65m (Mowe Golf Town 2-Bed Semi, promo) to ₦650m (Value Centric 5BR, Ikota).\n\nTell me your budget and whether you want LAND or a HOUSE, and I will list what fits.';
+  if(/inspect|visit|view|see it|tour/.test(t)) return INSPECT;
+  if(/pay|payment|instal|deposit|mortgage|plan/.test(t)) return PAYMENT;
+  if(/title|document|cofo|certificate|governor|allocation/.test(t)) return 'TITLES & DOCUMENTS\nAll our listings are verified. Titles vary by property — for example C of O on Urban Signature Eleko, Creek View Extension and Key Haven Kajola; Governor\u2019s Consent on AFE Residence and the Orchid 5BR; Government Allocation on Key Haven Phase 1, Ilara, Epe.\n\nTell me the property name and I will confirm its exact title.';
+  if(/human|person|agent|call|whatsapp|phone|contact|email/.test(t)) return CONTACT;
+  if(/hello|hi\b|hey|good morning|good afternoon|good evening/.test(t)) return 'Hello, welcome to Choice Properties Realtors — Your Exact Choice! 🏡\n\nAre you looking for LAND or a HOUSE? Tap a button below, or type a location like Lekki, Epe or Mowe.';
+  if(/thank/.test(t)) return 'You are welcome! Anything else — land, houses, prices, inspection or payment? I am here day and night.';
+  if(/hour|open|close|when.*open/.test(t)) return 'I reply instantly, day or night. Our team is on WhatsApp +234 805 897 5356 and +234 806 227 3394, and we reply as soon as we are back.';
+  if(/location|where|area/.test(t)) return 'We have verified properties in Lekki, Epe, Ibeju Lekki, Ikorodu, Mowe, Ofada and Sagamu. Which area are you looking at?';
+  return 'I can help with land, houses, prices, payment plans, inspections and titles.\n\nTry one of the buttons below, or type e.g. "land in Epe", "houses in Lekki", or "payment plan".\n\nFor a person, tap WhatsApp below — +234 805 897 5356.';
+}
+var btn=document.getElementById('choiceChatBtn'), panel=document.getElementById('choiceChatPanel'),
+body=document.getElementById('choiceChatBody'), chips=document.getElementById('choiceChatChips'),
+input=document.getElementById('choiceChatInput'), send=document.getElementById('choiceChatSend');
+var CHIP_LIST=[['Land for sale','land'],['Luxury homes','houses'],['Prices','prices'],['Book inspection','book inspection'],['Payment plans','payment plans'],['Talk to a human','talk to a human']];
+function addMsg(text,who){var d=document.createElement('div');d.className='choice-msg '+who;var html=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');html=html.replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');d.innerHTML=html;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+function addWaLink(){var d=document.createElement('div');d.className='choice-msg bot';d.innerHTML='Chat with us on WhatsApp: <a href="'+waLink('Hello Choice Properties Realtors, I am interested in a property.')+'" target="_blank" rel="noopener">+234 805 897 5356</a>';body.appendChild(d);body.scrollTop=body.scrollHeight;}
+function respond(q){addMsg(q,'user');var a=answer(q);addMsg(a,'bot');if(/inspect|human|person|contact|call/.test(q.toLowerCase())) addWaLink();}
+CHIP_LIST.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c[0];b.onclick=function(){respond(c[1]);};chips.appendChild(b);});
+function toggle(open){panel.classList.toggle('open',open);if(open&&!body.children.length){addMsg('Hello, welcome to Choice Properties Realtors — Your Exact Choice! 🏡\n\nI reply instantly, even when our team is offline.\n\nAre you looking for LAND or a HOUSE? Tap a button below to start.','bot');}if(open) input.focus();}
+btn.onclick=function(){toggle(!panel.classList.contains('open'));};
+document.getElementById('choiceChatClose').onclick=function(){toggle(false);};
+function doSend(){var v=input.value.trim();if(!v) return;input.value='';respond(v);}
+send.onclick=doSend;
+input.addEventListener('keydown',function(e){if(e.key==='Enter') doSend();});
+})();
+</script>
+
+</body>
 </html>
