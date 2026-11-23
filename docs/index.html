@@ -525,6 +525,35 @@
       .blog-excerpt { color: var(--muted); font-size: 0.94rem; }
       .blog-read { margin-top: auto; padding-top: 10px; font-weight: 700; font-size: 0.93rem; color: var(--brand); }
 
+      /* ---------- free guide ---------- */
+      .guide-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 44px; align-items: center; }
+      .guide-photo img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+      .guide-tag {
+        display: inline-block; background: #125ab4; color: #fff;
+        font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+        padding: 6px 12px; border-radius: 6px; margin-bottom: 16px;
+      }
+      .guide-copy h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; }
+      .guide-copy h2 .accent { color: var(--brand); }
+      .guide-sub { margin-top: 12px; color: var(--muted); font-size: 1.02rem; max-width: 52ch; }
+      .guide-form { margin-top: 24px; max-width: 480px; }
+      .guide-form .btn { width: 100%; justify-content: center; }
+      .guide-form .btn[disabled] { opacity: 0.65; cursor: wait; }
+      .guide-done { display: none; margin-top: 24px; max-width: 480px; background: var(--brand-soft); border-radius: var(--radius); padding: 22px; }
+      .guide-done.show { display: block; }
+      .guide-done h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
+      .guide-done p { color: var(--ink-soft); font-size: 0.95rem; }
+      .guide-error { display: none; margin-top: 16px; max-width: 480px; color: var(--brand); font-weight: 600; font-size: 0.95rem; }
+      .guide-error.show { display: block; }
+      .guide-error a { text-decoration: underline; }
+      .guide-banner {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px 20px; flex-wrap: wrap;
+        background: #125ab4; color: #fff; border-radius: var(--radius); padding: 18px 22px; margin-bottom: 26px;
+      }
+      .guide-banner p { font-size: 0.98rem; max-width: 62ch; }
+      .guide-banner .btn { background: #fff; color: #125ab4; flex: none; }
+      .guide-banner .btn:hover { background: #e8f0fa; }
+
       /* ---------- article reader ---------- */
       .reader {
         position: fixed; inset: 0; z-index: 80;
@@ -584,6 +613,8 @@
         .luxury-grid { grid-template-columns: 1fr; }
         .gallery-main { aspect-ratio: 4 / 3; }
         .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        .guide-grid { grid-template-columns: 1fr; gap: 28px; }
+        .guide-photo { max-width: 440px; }
         .footer-grid { grid-template-columns: 1fr 1fr; }
         .searchbar { grid-template-columns: 1fr 1fr; }
         .searchbar .field { border-bottom: 1px solid var(--line); }
@@ -662,6 +693,7 @@
           <a href="#land">Land</a>
           <a href="#services">Services</a>
           <a href="#about">About</a>
+          <a href="#guide">Free Guide</a>
           <a href="#blog">Blog</a>
           <a href="#contact">Contact</a>
           <a class="btn btn-wa" href="https://wa.me/2348058975356?text=Hello%20Choice%20Properties%20Realtors%2C%20I%27m%20interested%20in%20a%20property." target="_blank" rel="noopener">
@@ -4090,12 +4122,61 @@
         </div>
       </section>
 
+      <!-- free guide -->
+      <section id="guide">
+        <div class="wrap">
+          <div class="guide-grid">
+            <div class="guide-photo">
+              <img src="assets/696d56501ebf.webp" alt="The Smart Buyer's Guide to Land &amp; Homes in Nigeria — the free Choice Properties Realtors ebook shown as a book and on a tablet" loading="lazy" />
+            </div>
+            <div class="guide-copy">
+              <span class="guide-tag">Free download</span>
+              <h2>Free Ebook: <span class="accent">The Smart Buyer's Guide</span> to Land &amp; Homes in Nigeria</h2>
+              <p class="guide-sub">12 honest guides to buying property safely: titles, omo onile, multiple allocation, payment plans, hidden costs, land banking and more.</p>
+              <form class="guide-form" id="ebookForm" action="https://formspree.io/f/mdeaalaj" method="POST">
+                <input type="hidden" name="_subject" value="New FREE EBOOK lead — Smart Buyer's Guide" />
+                <input type="hidden" name="source" value="Free ebook download" />
+                <div class="field">
+                  <label for="gName">Full name</label>
+                  <input id="gName" name="name" type="text" placeholder="e.g. Adaeze Okafor" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="gWhatsapp">WhatsApp number</label>
+                  <input id="gWhatsapp" name="whatsapp" type="tel" placeholder="e.g. 0803 000 0000" autocomplete="tel" required />
+                </div>
+                <div class="field">
+                  <label for="gEmail">Email address</label>
+                  <input id="gEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+                </div>
+                <button class="btn btn-brand" id="ebookSubmit" type="submit">Get my free guide</button>
+              </form>
+              <div class="guide-done" id="ebookDone" role="status">
+                <h3>Thank you — your guide is ready!</h3>
+                <p>Your download should start automatically. If it doesn't, tap “Download again” below — and feel free to ask us anything about buying safely.</p>
+                <div class="form-actions">
+                  <a class="btn btn-brand" href="assets/Smart-Buyers-Guide-Land-and-Homes-Nigeria.pdf" download>Download again</a>
+                  <a class="btn btn-wa" href="https://wa.me/2348058975356?text=Hello%20Choice%20Properties%20Realtors%2C%20I%20just%20downloaded%20your%20free%20ebook%2C%20The%20Smart%20Buyer%27s%20Guide%20to%20Land%20%26%20Homes%20in%20Nigeria%2C%20and%20I%20have%20a%20question." target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23m4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg>
+                    Chat with us on WhatsApp
+                  </a>
+                </div>
+              </div>
+              <p class="guide-error" id="ebookError" role="alert">Sorry — something went wrong sending your details, so we may not have received them. Please don't miss out: you can still <a href="assets/Smart-Buyers-Guide-Land-and-Homes-Nigeria.pdf" download>download the free guide here</a>, or <a href="https://wa.me/2348058975356?text=Hello%20Choice%20Properties%20Realtors%2C%20I%20tried%20to%20download%20your%20free%20ebook%2C%20The%20Smart%20Buyer%27s%20Guide%20to%20Land%20%26%20Homes%20in%20Nigeria%2C%20but%20the%20form%20did%20not%20go%20through." target="_blank" rel="noopener">chat with us on WhatsApp</a> and we'll sort it out.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- blog -->
       <section id="blog">
         <div class="wrap">
           <div class="section-head">
             <h2>From the <span class="accent">blog</span></h2>
             <p>Straight-talk guides on buying homes and land in Nigeria — property titles, due diligence, and where the smart money is going. Tap any article to read it in full.</p>
+          </div>
+          <div class="guide-banner">
+            <p><strong>Prefer it all in one place?</strong> Get all 12 guides as one free ebook — The Smart Buyer's Guide to Land &amp; Homes in Nigeria.</p>
+            <a class="btn" href="#guide">Get the free guide</a>
           </div>
           <div class="blog-cards">
             <a class="blog-card" href="#blog/understanding-property-titles">
@@ -4968,6 +5049,44 @@
           }
           routeBlog();
         });
+
+        // Free ebook opt-in: send the lead to Formspree by AJAX, then start
+        // the PDF download automatically. If sending fails, the visitor still
+        // gets a plain-language message and a direct download link.
+        var ebookForm = document.getElementById('ebookForm');
+        if (ebookForm) {
+          var ebookDone = document.getElementById('ebookDone');
+          var ebookError = document.getElementById('ebookError');
+          var ebookBtn = document.getElementById('ebookSubmit');
+          function startGuideDownload() {
+            var a = document.createElement('a');
+            a.href = 'assets/Smart-Buyers-Guide-Land-and-Homes-Nigeria.pdf';
+            a.setAttribute('download', 'Smart-Buyers-Guide-Land-and-Homes-Nigeria.pdf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }
+          ebookForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            ebookError.classList.remove('show');
+            ebookBtn.disabled = true;
+            ebookBtn.textContent = 'Sending…';
+            fetch(ebookForm.action, {
+              method: 'POST',
+              body: new FormData(ebookForm),
+              headers: { 'Accept': 'application/json' }
+            }).then(function (res) {
+              if (!res.ok) throw new Error('Submission failed');
+              ebookForm.hidden = true;
+              ebookDone.classList.add('show');
+              startGuideDownload();
+            }).catch(function () {
+              ebookBtn.disabled = false;
+              ebookBtn.textContent = 'Get my free guide';
+              ebookError.classList.add('show');
+            });
+          });
+        }
       })();
     </script>
   </body>
