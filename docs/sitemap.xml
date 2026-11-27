@@ -7,262 +7,80 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-afe-residence</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-camberwall-annex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-celebration-parkland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-chevron-duplex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-chevron-tollgate-5bed</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-creek-view-extension</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-eri-lagos-bungalows</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-genesis-court-phase-4</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-heirs-residence</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-ikate-5bed-duplex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-ikate-penthouse</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-key-haven-homes-kajola</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-key-haven-imota</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-key-haven-kajola-land</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-key-haven-phase-1-ilara</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-lauren-ashley-court-iii</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-lekki-phase1-apartments</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-lekki-picasso-city</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-maven-phase-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-maven-phase-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-mowe-golf-town</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-mowe-prime</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-okun-ajah</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-4bed-330m</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-4bed-semi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-4bed-terraced-duplex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-4bed-triplex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-5bed-450m</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-5bed-duplex</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-orchid-5bed-h1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-pistis-gardens-kila</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-providence-court-awoyaya</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-queens-home</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-queens-park-estate-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-the-riviera</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-urban-signature-bungalow</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-urban-signature-site-service</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-value-centric-ikota</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-villa-nova-bungalows</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#listing-vision-home-estate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/300sqm-vs-500sqm-choosing-plot-size</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/300sqm-vs-500sqm-choosing-plot-size/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/buy-house-lagos-instalment-payment-plans</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/buy-house-lagos-instalment-payment-plans/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/buying-property-from-abroad-diaspora-guide</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/buying-property-from-abroad-diaspora-guide/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/due-diligence-checks-before-buying-land</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/due-diligence-checks-before-buying-land/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/hidden-costs-buying-property-lagos</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/hidden-costs-buying-property-lagos/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/inspect-before-you-invest</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/inspect-before-you-invest/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/land-banking-nigeria-buy-now-build-later</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/land-banking-nigeria-buy-now-build-later/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/multiple-allocation-land-how-to-protect-yourself</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/multiple-allocation-land-how-to-protect-yourself/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/off-plan-vs-completed-homes-lekki</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/off-plan-vs-completed-homes-lekki/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/omo-onile-vs-real-estate-company-buying-land-lagos</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/omo-onile-vs-real-estate-company-buying-land-lagos/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/understanding-property-titles</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/understanding-property-titles/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://choicepropertiesrealtors.github.io/website/#blog/why-investors-are-buying-land-in-epe</loc>
+    <loc>https://choicepropertiesrealtors.github.io/website/blog/why-investors-are-buying-land-in-epe/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
